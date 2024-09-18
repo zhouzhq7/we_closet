@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/wardrobe_bloc.dart';
 import '../bloc/wardrobe_event.dart';
 import '../bloc/wardrobe_state.dart';
-import '../../../shared/widgets/clothing_card.dart';
 import '../../../data/repository/wardrobe_repository.dart';
+import '../../../shared/widgets/clothing_card.dart';
 
 class WardrobeScreen extends StatelessWidget {
   @override
@@ -37,6 +37,12 @@ class WardrobeScreen extends StatelessWidget {
             }
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/add_clothing');
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
